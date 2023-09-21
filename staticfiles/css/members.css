@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply styles to the entire page if needed */
+body {
+    font-family: corisande;
+    background-color: white;
+   
+}
+
+.welcome_div{
+    background: linear-gradient(180deg,#F1F6FF 0%,rgba(255,255,255,0) 78.28%);
+    padding: 20px;
+}
+
+  
+  /* Style the heading */
+.members_h1 {
+  font-size: 22px;
+  color: cadetblue;
+  font-weight: bold;
+  text-align: center;
+  font-family: corisande;
+  padding-top: 28px;
+}
+
+h1.members_tag {
+  text-align: center;
+  font-size: 13px;
+  font-family: corisande;
+}
+span.members_span {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+  .members-container {
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .update-text {
+    flex: 1; /* Allow text to grow and take available space */
+    color: rgb(30,142,205);
+    text-align: left;
+    line-height: 66px;
+    letter-spacing: 0;
+    font-weight: 700;
+    font-size: 36px;
+    border-color: rgb(30,142,205);
+    border-style: none;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    font-family: corisande;
+  }
+
+ 
+  
+  
+  /* Style the table container */
+  .table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Style the table */
+  .table {
+    width: 70%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+    margin-bottom: 0;
+    margin: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 11px rgb(61 80 75);
+
+  }
+  
+  /* Style the table header */
+  .table thead {
+    background-color: green;
+    color: #fff;
+  }
+ 
+  
+  /* Style the table header cells */
+  .table th {
+    padding: 6px 12px;
+    font-weight: bold;
+    font-family: corisande;
+    color: dimgray;
+  }
+  
+  /* Style the table rows */
+  .table tbody tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .table tbody tr:hover {
+    background-color: red; /* Change this color to your desired hover color */
+    cursor: pointer; /* Change the cursor to a pointer on hover (optional) */
+  }
+  
+  /* Style the table data cells */
+  .table td {
+    padding: 4px 15px;
+    font-family: corisande;
+    font-size: 12px;
+  }
+  
+  /* Hover effect for table rows */
+  .table tbody tr:hover {
+    background-color: #f0f0f0;
+  }
+  

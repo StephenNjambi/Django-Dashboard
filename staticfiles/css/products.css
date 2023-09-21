@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: corisande;
+  font-size: 16px;
+}
+
+
+h1.members_h1 {
+    font-size: 22px;
+    color: cadetblue;
+    font-weight: bold;
+    text-align: center;
+    font-family: corisande;
+    padding-top: 34px;
+}
+p.members_p {
+    text-align: center;
+    font-size: 13px;
+    font-family: corisande;
+}
+

@@ -1,0 +1,25 @@
+{% load static %}
+
+<div id="sidebar">
+  <header>
+    <a href="#">Dashboard</a>
+  </header>
+  <ul class="nav">
+    <li >
+      <a href="{% url 'dashboard:dashboard' %}">
+        <i class="fas fa-home"></i> Dashboard</a>
+    </li>
+    <li>
+      <a href="{% url 'members:members' %}">
+        <i class="fas fa-users me-2"></i>  Members</a>
+    </li>
+    <li>
+      <a href="{% url 'products:products' %}">
+        <i class="fas fa-shopping-cart me-2"></i> Products</a>
+    </li>
+    <li>
+      <a href="{% url 'loginpage:loginpage' %}">
+        <i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+    </li>
+  </ul>
+</div>

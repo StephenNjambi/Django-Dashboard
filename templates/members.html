@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block stylings %}
+  <link rel="stylesheet" href="{% static 'css/members.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %}
+
+{% block content %}
+{% include 'default/sidebar.html' %}
+  <div class="welcome_div">
+    
+    <h1 class="members_h1">Welcome to Membership Board</h1>
+    <h1 class="members_tag">
+      The all-in-one <span class="members_span">membership</span> platform for players
+    </h1>
+  </div>
+
+  {% include 'tables/members_details.html' %}
+
+ 
+ 
+  
+{% endblock %}

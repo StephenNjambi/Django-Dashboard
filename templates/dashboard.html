@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylings %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div id="viewport">
+  {% include 'default/sidebar.html' %}
+
+    <!-- Content -->
+    <div id="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+              </a>
+            </li>
+            <li><a href="#">Test User</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <h1>Membership Dashboard</h1>
+        <p>Please remember to Log out when <code>#done with your work.</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  {% include 'cards/dashboard_cards.html' %}
+{% endblock %}
