@@ -4,6 +4,5 @@ from . import views
 app_name = 'reset'
 
 urlpatterns = [
-    path('reset/', views.resetting, name='reset'),  
-  
+    path('reset/', views.register, name='reset'),
 ]
