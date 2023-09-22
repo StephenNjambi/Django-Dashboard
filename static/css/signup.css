@@ -70,5 +70,12 @@ div#names_lable {
     margin: 0 auto;
 }
 
+/* error message  */
+.alert.alert-error {
+    text-align: center;
+    color: red;
+    font-family: corisande;
+}
+
 
 

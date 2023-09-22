@@ -75,4 +75,11 @@ display: none;
     text-align: center;
 }
 
+a#show-signup {
+    color: crimson;
+}
+a.btn.btn-link {
+    color: crimson;
+    font-size: 14px;
+}
 
