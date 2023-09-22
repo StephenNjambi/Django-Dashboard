@@ -26,5 +26,5 @@ urlpatterns = [
     path('', include('loginpage.urls')),
     path('', include('dashboard.urls')),
     path('', include('registration.urls')),
-    path('', include('reset.urls', namespace='reset')),
+    path('', include('reset.urls')),
 ]
