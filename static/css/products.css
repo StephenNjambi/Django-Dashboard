@@ -21,3 +21,174 @@ p.members_p {
     font-family: corisande;
 }
 
+/* new product page  */
+/* table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+} */
+
+/* CSS variables */
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --font-family: sans-serif;
+}
+
+/* Flexbox layout */
+.newItem_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Item header */
+#NewItem_header {
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  margin-top: 43px;
+  margin-bottom: 26px;
+}
+
+/* CSS for the NewItems_form */
+#NewItems_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 64%;
+  /* padding: 20px; */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  margin-bottom: 73px;
+}
+
+#NewItems_form table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* Set the background color of the table */
+}
+
+#NewItems_form th,
+#NewItems_form td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#NewItems_form th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+#NewItems_form input[type="text"],
+#NewItems_form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+#additems_button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#additems_button:hover {
+  background-color: #0056b3;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+}
+
+th {
+  background-color: var(--secondary-color);
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+input#additems_button {
+  background: cadetblue;
+  margin: auto;
+  width: 21%;
+  border: none;
+  margin-bottom: 47px;
+  border-radius: 13px;
+  height: 39px;
+  color: white;
+}
+
+/* Existing items table */
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+  /* Change layout for small screens */
+}
+
+
+/* CSS for existing items table */
+table#Existing_items_table {
+  margin: auto;
+  width: 64%;
+  border-collapse: collapse;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table#Existing_items_table th,
+table#Existing_items_table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background-color: #fff; /* Set the background color of table cells */
+}
+
+table#Existing_items_table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+

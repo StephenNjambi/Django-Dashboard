@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylings %}
+    <link rel="stylesheet" href="{% static 'css/members.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Type</th>
+            <th scope="col">Raquets</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Gear</td>
+            <td>Court Shues</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Equipment</td>
+            <td>Racquet</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Equipment</td>
+            <td>Tennise</td>
+            <td>@fat</td>
+        </tr>
+        </tbody>
+    </table>
+
+{%endblock%}

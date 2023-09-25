@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylings %}
+    <link rel="stylesheet" href="{% static 'css/members.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/products.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+
+
+{% endblock %}
+
+
+{% block content %}
+{% include 'default/sidebar.html' %}
+
+    <div class="newItem_container">
+        <h1 id="NewItem_header" >Tennis Dashboard - Add New Items</h1>
+
+        <form id="NewItems_form" action="/add_item" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="item_name" required></td>
+                    <td><input type="text" name="description" required></td>
+                    <td><input type="number" name="quantity" required></td>
+                </tr>
+            </table>
+            <br>
+            <input id="additems_button" type="submit" value="Add Item">
+        </form>
+
+        <!-- Display existing items in another table -->
+        <h2>Existing Items</h2>
+        <table id="Existing_items_table">
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Quantity</th>
+            </tr>
+            {% for item in items %}
+                <tr>
+                    <td>Tennis ball</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.quantity }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+</div>
+
+{%endblock%}

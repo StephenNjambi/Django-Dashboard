@@ -12,7 +12,7 @@ def register(request):
         lastname = request.POST.get('lastname')
         email = request.POST.get('email')
         password1 = request.POST.get('password1')
-        password2 = request.POST.get('password2')
+        # password2 = request.POST.get('password2')
 
         try:
             user = User.objects.create_user(
@@ -22,8 +22,9 @@ def register(request):
                 last_name =lastname, 
                 password=password1)
             user.save()
-            messages.success(request, "Account created!")
-            return redirect('registration:signup')
+            messages.success(request, "Account created !")
+            return redirect('loginpage:loginpage')
+        
         except IntegrityError:
             messages.error(request, "The user already exists!")
             return redirect('registration:signup')

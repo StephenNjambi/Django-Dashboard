@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'dashboard',
     'registration',
     'reset',
+    'newproducts',
 ]
 
 MIDDLEWARE = [
