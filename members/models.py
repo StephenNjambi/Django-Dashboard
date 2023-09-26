@@ -8,3 +8,5 @@ class Member(models.Model):
     phone = models.IntegerField(null=True)
     joined_date = models.DateField(null=True)
     email = models.CharField(max_length=255,default='example@example.com')
+
+
