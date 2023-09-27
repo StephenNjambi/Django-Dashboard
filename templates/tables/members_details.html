@@ -1,7 +1,10 @@
 {% load static %}
 
-<div class="members-container">
-    <table  class="table table-striped table-bordered" >
+
+{% block content %}
+
+  <div class="members-container">
+    <table id="membersTable" class="table table-striped table-bordered" >
       <thead  >
         <tr >
           <th>FirstName</th>
@@ -29,4 +32,17 @@
         {% endfor %}
       </tbody>
     </table>
-</div> 
+  </div> 
+
+  <script>
+    $(document).ready(function () {
+      $('#membersTable').DataTable();
+    });
+  </script>
+
+{%endblock%}
+  
+  
+  
+  
+  
