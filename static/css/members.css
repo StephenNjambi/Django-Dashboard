@@ -74,6 +74,11 @@ span.members_span {
     overflow: hidden;
   }
   
+  .newmembers_tag{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
   /* Style the table */
   .table {
     width: 70%;
@@ -86,49 +91,101 @@ span.members_span {
     box-shadow: 0 0 11px rgb(61 80 75);
 
   }
+
+
+/* Style the table cells (th and td) */
+table#membersTable th,
+table#membersTable td {
+  border: 1px solid #ddd; /* Add a 1px solid border to each cell */
+  padding: 8px; /* Add padding for spacing */
+  text-align: left; /* Align text to the left within cells */
+}
+
+/* Style the table header cells (th) */
+table#membersTable th {
+  background-color: #f2f2f2; /* Add a background color to header cells */
+}
+
+
+
+
+
+
+
   
-  /* Style the table header */
-  .table thead {
-    background-color: green;
-    color: #fff;
-  }
+/* Style the table header */
+.table thead {
+  background-color: green;
+  color: #fff;
+}
  
   
-  /* Style the table header cells */
-  .table th {
-    padding: 6px 12px;
-    font-weight: bold;
-    font-family: corisande;
-    color: dimgray;
-  }
+/* Style the table header cells */
+.table th {
+  padding: 6px 12px;
+  font-weight: bold;
+  font-family: corisande;
+  color: dimgray;
+}
   
-  /* Style the table rows */
-  .table tbody tr {
-    border-bottom: 1px solid #ccc;
-  }
+/* Style the table rows */
+.table tbody tr {
+  border-bottom: 1px solid #ccc;
+}
 
-  .table tbody tr:hover {
-    background-color: red; /* Change this color to your desired hover color */
-    cursor: pointer; /* Change the cursor to a pointer on hover (optional) */
-  }
+.table tbody tr:hover {
+  background-color: red; /* Change this color to your desired hover color */
+  cursor: pointer; /* Change the cursor to a pointer on hover (optional) */
+}
   
-  /* Style the table data cells */
-  .table td {
-    padding: 4px 15px;
-    font-family: corisande;
-    font-size: 12px;
-  }
+/* Style the table data cells */
+.table td {
+  padding: 4px 15px;
+  font-family: corisande;
+  font-size: 12px;
+}
   
-  /* Hover effect for table rows */
-  .table tbody tr:hover {
-    background-color: #f0f0f0;
-  }
+/* Hover effect for table rows */
+.table tbody tr:hover {
+  background-color: #f0f0f0;
+}
 
 
 
-  /* css for creating adding members  */
-  .newmembers_container {
-    margin-top: 60px;
-  }
+/* css for creating adding members  */
+.newmembers_container {
+  margin-top: 60px;
+}
   
+table.dataTable {
+  width: 71%;
+  margin: auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+div#membersTable_paginate {
+  margin-right: 16% !important;
+  height: 30px !important;
+  margin-top: 10px !important;
+  font-size: 13px !important;
+}
+div#membersTable_info {
+  margin: auto;
+  margin-left: 16%;
+  font-size: 13px;
+  color: darkred;
+}
+button#add_button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button#add_button:hover {
+  background-color:teal; 
+}
   

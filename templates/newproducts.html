@@ -37,7 +37,7 @@
 
         <!-- Display existing items in another table -->
         <h2>Existing Items</h2>
-        <table id="existing_items_table" class="table">
+        <table id="membersTable" class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
@@ -67,6 +67,16 @@
             </tr>
             </tbody>
         </table>
-</div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#membersTable').DataTable({
+                "paging": true, 
+                "pageLength": 10, 
+                "dom": '<"top"l>rt<"bottom"ip>',
+            });
+        });
+    </script>
 
 {%endblock%}

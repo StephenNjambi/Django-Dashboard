@@ -7,48 +7,42 @@
 
 {% block content %}
 
-<div class="newmembers_container">
-  <table class="table">
-      <thead>
-          <tr>
-              <th scope="col">#</th>
-              <th scope="col">First name</th>
-              <th scope="col">Last name</th>
-              <th scope="col">Email</th>
-          </tr>
-      </thead>
-      <tbody>
-          {% for user in myusers %}
-          <tr>
-              <th scope="row">{{ user.id }}</th>
-              <td>{{ user.first_name }}</td>
-              <td>{{ user.last_name }}</td>
-              <td>{{ user.email }}</td>
-          </tr>
-          {% endfor %}
-      </tbody>
-  </table>
+    <div class="newmembers_container">
+        <table id="membersTable" class="table">
+            <div class="newmembers_tag">New registered members</div>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Registration</th>
 
-  <div class="pagination">
-      <span class="step-links">
-          {% if myusers.has_previous %}
-              <a href="?page=1">&laquo; first</a>
-              <a href="?page={{ myusers.previous_page_number }}">previous</a>
-          {% endif %}
-          
-          <span class="current-page">
-              Page {{ myusers.number }} of {{ myusers.paginator.num_pages }}.
-          </span>
-          
-          {% if myusers.has_next %}
-              <a href="?page={{ myusers.next_page_number }}">next</a>
-              <a href="?page={{ myusers.paginator.num_pages }}">last &raquo;</a>
-          {% endif %}
-      </span>
-  </div>
-</div>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in myusers %}
+                <tr>
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }} </td>
+                    <td><button id="add_button">Add</button></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-
- 
-
+    <script>
+    $(document).ready(function () {
+        $('#membersTable').DataTable({
+            "paging": true, // Enable pagination
+            "pageLength": 9, // Number of rows per page
+            "dom": '<"top"l>rt<"bottom"ip>',
+            // Add more options as needed
+        });
+    });
+    </script>
 {% endblock %}
