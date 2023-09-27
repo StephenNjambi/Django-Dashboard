@@ -148,6 +148,7 @@ div#membersTable_paginate {
   height: 30px !important;
   margin-top: 10px !important;
   font-size: 13px !important;
+  margin-bottom: 50px;
 }
 div#membersTable_info {
   margin: auto;
@@ -172,15 +173,61 @@ button#add_button:hover {
 .dataTables_wrapper {
   position: relative;
   clear: both;
-  width: 73%;
+  width: 100%;
   margin: auto;
 }
 table#membersTable {
-  width: 100%;
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .dataTables_wrapper .dataTables_filter {
   float: right;
   text-align: right;
-  margin-bottom: 24px;
+  margin-bottom: 50px;
+}
+
+div#members_Table_length {
+  background: cadetblue;
+  margin-left: 15%;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+div#members_Table_filter {
+  margin-right: 15%;
+}
+
+.dataTables_wrapper .dataTables_info {
+  clear: both;
+  float: left;
+  margin-left: 15%;
+  margin-top: 10px;
+  padding-top: 0.755em;
+  font-size: 13px;
+  color: firebrick;
+}
+
+div#members_Table_paginate {
+  margin-right: 13%;
+  height: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+a.paginate_button.current {
+  height: 22px;
+  font-size: 9px;
+}
+
+#members_delete_button{
+  background-color: #007bff;
+  color: #fff;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -17,7 +17,6 @@
                     <th scope="col">Last name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Registration</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -28,21 +27,15 @@
                     <td>{{ user.last_name }}</td>
                     <td>{{ user.email }} </td>
                     <td><button id="add_button">Add</button></td>
-                    
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 
-    <script>
-    $(document).ready(function () {
-        $('#membersTable').DataTable({
-            "paging": true, // Enable pagination
-            "pageLength": 9, // Number of rows per page
-            "dom": '<"top"l>rt<"bottom"ip>',
-            // Add more options as needed
-        });
-    });
-    </script>
+    <!-- Include the JavaScript file -->
+    {% block javascripts %}
+        <script src="{% static 'javascript/members.js' %}"></script>
+    {% endblock %}
+
 {% endblock %}
