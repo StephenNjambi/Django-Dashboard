@@ -4,7 +4,7 @@
 {% block content %}
 
   <div class="members-container">
-    <table id="members_Table" class="table table-striped table-bordered" >
+    <table id="allMembers_talbe" class="table table-striped table-bordered" >
       <thead  >
         <tr >
           <th>FirstName</th>
@@ -36,11 +36,11 @@
     </table>
   </div> 
 
-  <script>
-    $(document).ready(function () {
-      $('#members_Table').DataTable();
-    });
-  </script>
+  
+   <!-- Include the JavaScript file -->
+   {% block javascripts %}
+    <script src="{% static 'javascript/members.js' %}"></script>
+  {% endblock %}
 
 {%endblock%}
   

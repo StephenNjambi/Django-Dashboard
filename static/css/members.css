@@ -95,6 +95,8 @@ table#membersTable td {
   text-align: left; 
 }
 
+
+
 table#membersTable th {
   background-color: #f2f2f2; 
 }
@@ -104,7 +106,7 @@ table#membersTable th {
   color: #fff;
 }
  
-  
+
 .table th {
   padding: 6px 12px;
   font-weight: bold;
@@ -156,7 +158,7 @@ div#membersTable_info {
   font-size: 13px;
   color: darkred;
 }
-button#add_button {
+button.add_button {
   background-color: #007bff;
   color: #fff;
   padding: 4px 12px;
@@ -164,7 +166,9 @@ button#add_button {
   border-radius: 5px;
   cursor: pointer;
 }
-button#add_button:hover {
+
+
+button.add_button:hover {
   background-color:teal; 
 }
   
@@ -185,7 +189,8 @@ table#membersTable {
 .dataTables_wrapper .dataTables_filter {
   float: right;
   text-align: right;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-right: 15%;
 }
 
 div#members_Table_length {
@@ -195,6 +200,12 @@ div#members_Table_length {
   font-weight: bold;
   padding: 5px;
   border-radius: 5px;
+}
+
+.dataTables_wrapper .dataTables_length {
+  float: left;
+  margin-left: 15%;
+  font-size: 13px;
 }
 
 div#members_Table_filter {
@@ -211,11 +222,18 @@ div#members_Table_filter {
   color: firebrick;
 }
 
-div#members_Table_paginate {
+
+div#newMemberTable_paginate {
+  margin-right: 14%;
+  margin-top: 11px;
+  font-size: 12px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  float: right;
+  text-align: right;
+  padding-top: 0.25em;
   margin-right: 13%;
-  height: 10px;
-  margin-top: 20px;
-  font-size: 14px;
 }
 
 a.paginate_button.current {
