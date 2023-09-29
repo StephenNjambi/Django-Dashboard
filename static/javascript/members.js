@@ -9,38 +9,45 @@
 
 
 // Members table javascript code.
-    $(document).ready(function () {
+    $(document).ready(function () {``
         $('#allMembers_talbe').DataTable();
     });
 
 
 // removing member form new members table to members table.
-// Get all the "Add" buttons
-const addButtons = document.querySelectorAll(".add_button");
 
-// Iterate through each button and add a click event listener
-addButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        // Get the user ID from the data attribute
-        const userId = this.getAttribute("data-user-id");
-
-        // Find the row containing the clicked button
-        const row = this.closest("tr");
-
-        // Clone the row to move it to the last table
-        const newRow = row.cloneNode(true);
-
-        // Remove the button from the cloned row
-        newRow.querySelector(".add_button").remove();
-
-        // Add the cloned row to the last table's tbody
-        const lastTableBody = document.querySelector("#allMembers_table tbody");
-        lastTableBody.appendChild(newRow);
-
-        // Remove the original row from the current table
+$(document).ready(function () {
+    $('#newMemberTable tbody').on('click', 'button.add_button', function () {
+        var row = $(this).closest('tr');
+        var newRow = row.clone();
+        newRow.find('button.add_button').remove();
+        $('#allMembers_table tbody').append(newRow);
         row.remove();
+        storeTableData();
     });
+
+    // Function to store the updated table data in local storage
+    function storeTableData() {
+        var allMembersData = $('#allMembers_table tbody').html();
+        localStorage.setItem('allMembersData', allMembersData);
+    }
+
+    // Function to retrieve and display data from local storage
+    function retrieveTableData() {
+        var storedData = localStorage.getItem('allMembersData');
+        if (storedData) {
+            $('#allMembers_table tbody').html(storedData);
+        }
+    }
+
+    // Call the function to retrieve and display data from local storage
+    retrieveTableData();
 });
+
+
+
+
+
 
 
 

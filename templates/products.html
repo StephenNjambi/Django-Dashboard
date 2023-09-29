@@ -10,30 +10,81 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'default/sidebar.html' %}
+
+  {% include 'default/sidebar.html' %}
     
-    <h1 class="members_h1">All Products</h1>
-    <p class="members_p">All the Products Are Posted In This Page</p>
+  <h1 class="members_h1">All Products</h1>
+  <p class="members_p">All the Products Are Posted In This Page</p>
 
+    <h1 id="product_table_h1">Add Product</h1>
+ 
+    <form id="products_form" method="post" action="{% url 'products:products' %}">
+      {% csrf_token %}
 
-    <div class="card text-center" style="width:60%; margin:0 auto;">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">New Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Game wear</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Game equipments</a>
-            </li>
-          </ul>
+      <div class="imput_content">
+
+        <div class="lable_div">
+          <label for="{{ form.product_type.id_for_label }}">Product Type</label>
+          {{ form.product_type }}
         </div>
         
-        {% include 'cards/productcards.html' %}
+        <div class="lable_div">
+          <label for="{{ form.product_name.id_for_label }}">Product Name</label>
+          {{ form.product_name }}
+        </div>
+  
+        <div class="lable_div">
+          <label for="{{ form.product_status.id_for_label }}">Product Status</label>
+          {{ form.product_status }}
+  
+        </div>
+    
+  
+        <div class="lable_div">
+          <label for="{{ form.product_price.id_for_label }}">Product Price</label>
+          {{ form.product_price }}
+        </div>
+      </div>
+  
+      <button type="submit">Submit</button>
+  </form>
 
 
-        
-    </div>
+  <div class="products_table_container">
+    <table id="product_table" class="table table-striped table-bordered">
+      <thead>
+      <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product Type</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+          <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ product.product_type }}</td>
+              <td>{{ product.product_name }}</td>
+              <td>{{ product.product_price }}</td>
+              <td>
+                <div class="btns_container">
+                  <button id="actionEdit_btn" class="edit_button" >Edit</button>
+                  <button class="actionRemove_btn" >Remove</button>
+                </div>
+              </td>
+
+          </tr>
+        {% endfor %}
+      
+      </tbody>
+    </table>
+  </div>
+
+  {% block javascripts %}
+    <script src="{% static 'javascript/products.js' %}"></script>
+  {% endblock %}
+
 {% endblock %}
