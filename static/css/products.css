@@ -245,6 +245,8 @@ form#products_form button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+
+
 h1#product_table_h1 {
     text-align: center;
     font-size: 16px;
@@ -258,67 +260,85 @@ h1#product_table_h1 {
 }
 
 
+/* Apply styles to the table */
+.products_table_container {
+  width: 100%;
+  margin: 20px;
+}
 
 #product_table {
-  width: 69%;
-  margin: auto;
+  width: 72%;
+  border: 1px solid gray; /* Remove table border */
   border-collapse: collapse;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 }
 
-#product_table th,
-#product_table td {
-  padding: 8px;
-  text-align: left;
-}
 
-#product_table th {
-  background-color: #ccc;
-}
-
-#product_table tbody tr:nth-child(even) {
-  background-color: #eee;
-}
-
-.btns_container {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-}
-
-button#actionEdit_btn,.actionRemove_btn {
+#product_table thead {
+  background-color: #333;
   color: #fff;
-  padding: 3px;
-  cursor: pointer;
-  border-radius: 5px;
-  height: 24px;
-  width: 37%;
-  background-color: #007bff;
-  border-color: #007bff;
-  font-size: 12px;
 }
 
+#product_table th, #product_table td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Remove cell borders */
+}
+
+
+
+#product_table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+#product_table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Style the buttons */
+.edit_button, .actionRemove_btn {
+  padding: 5px 8px;
+  font-size: 12px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s;
+}
+
+
+
+.edit_button:hover, .actionRemove_btn:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust button container */
+.btns_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+div#product_table_length {
+  margin-left: 15%;
+  font-size: 13px;
+}
+div#product_table_info {
+  margin-left: 14%;
+  font-size: 12px;
+  color: firebrick;
+}
+
+div#product_table_paginate {
+  margin-right: 14%;
+  margin-top: 15px;
+  font-size: 13px;
+}
 
 .dataTables_wrapper .dataTables_filter {
-  float: right;
-  text-align: right;
   margin-right: 16%;
-}
-
-.dataTables_wrapper .dataTables_paginate {
-  float: right;
+  font-size: 11px;
+  right: 19px;
   text-align: right;
-  padding-top: 0.25em;
-  margin-right: 15%;
-  margin-top: 20px;
-  font-size: 13px;
 }
-
-.dataTables_wrapper .dataTables_info {
-  clear: both;
-  float: left;
-  padding-top: 0.755em;
-  margin-left: 16%;
-  font-size: 13px;
-  color: firebrick !important;
-}
-
-

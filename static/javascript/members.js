@@ -1,48 +1,49 @@
 // newmembers table javascript 
     $(document).ready(function () {
         $('#newMemberTable').DataTable({
-            "paging": true, // Enable pagination
-            "pageLength": 9, // Number of rows per page
-            "dom": '<"top"l>rt<"bottom"ip>', // Place the pagination control outside the table
+            "paging": true,
+            "pageLength": 9, 
+            "dom": '<"top"l>rt<"bottom"ip>', 
         });
     });
 
 
-// Members table javascript code.
-    $(document).ready(function () {``
-        $('#allMembers_talbe').DataTable();
-    });
+// // Members table javascript code.
+//     $(document).ready(function () {``
+//         $('#allMembers_talbe').DataTable();
+//     });
 
 
 // removing member form new members table to members table.
-
-$(document).ready(function () {
-    $('#newMemberTable tbody').on('click', 'button.add_button', function () {
-        var row = $(this).closest('tr');
-        var newRow = row.clone();
-        newRow.find('button.add_button').remove();
-        $('#allMembers_table tbody').append(newRow);
-        row.remove();
-        storeTableData();
-    });
-
-    // Function to store the updated table data in local storage
-    function storeTableData() {
-        var allMembersData = $('#allMembers_table tbody').html();
-        localStorage.setItem('allMembersData', allMembersData);
-    }
+// $(document).ready(function () {
+//     // Function to store the updated table data in local storage
+//     function storeTableData() {
+//         var allMembersData = $('#allMembers_table tbody').html();
+//         localStorage.setItem('allMembersData', allMembersData);
+//     }
 
     // Function to retrieve and display data from local storage
-    function retrieveTableData() {
-        var storedData = localStorage.getItem('allMembersData');
-        if (storedData) {
-            $('#allMembers_table tbody').html(storedData);
-        }
-    }
+    // function retrieveTableData() {
+    //     var storedData = localStorage.getItem('allMembersData');
+    //     if (storedData) {
+    //         $('#allMembers_table tbody').html(storedData);
+    //         console.log('Data retrieved from local storage');
+    //     }
+    // }
 
-    // Call the function to retrieve and display data from local storage
-    retrieveTableData();
-});
+//     retrieveTableData(); // Call this function to load data from local storage on page load
+//     $('#newMemberTable tbody').on('click', 'button.add_button', function () {
+//         var row = $(this).closest('tr');
+//         var newRow = row.clone();
+//         newRow.find('button.add_button').remove();
+//         $('#allMembers_table tbody').append(newRow);
+//         row.remove();
+//         storeTableData(); // Call this to update local storage when a member is added
+//     });
+// });
+
+
+
 
 
 

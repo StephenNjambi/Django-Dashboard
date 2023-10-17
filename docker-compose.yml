@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: mydjangoimage:v1
+    ports:
+      - "8080:8000"  # Map the host's port 8080 to the container's port 8000
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
