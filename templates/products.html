@@ -62,16 +62,29 @@
       </thead>
       <tbody>
         {% for product in products %}
-          <tr>
+          
+          <tr data-product-id="{{ product.id }}">
+
               <th scope="row">{{ forloop.counter }}</th>
               <td>{{ product.product_type }}</td>
               <td>{{ product.product_name }}</td>
               <td>{{ product.product_price }}</td>
               <td>
-                <div class="btns_container">
+                <!-- <div class="btns_container">
                   <button id="actionEdit_btn" class="edit_button" >Edit</button>
                   <button class="actionRemove_btn" data-delete-url="{% url 'products:delete_product' product.id %}" data-product-id="{{ productId }}">Delete</button>
-                </div>
+                </div> -->
+                <div class="btns_container">
+                  <a href="#" class="edit_link">
+                      <i class="fas fa-edit"></i> <!-- Edit icon as a link -->
+                  </a>
+                  <a href="#" class="delete_link">
+                      <i class="fas fa-trash"></i> <!-- Delete icon as a link -->
+                  </a>
+                  <a href="#" class="info_link">
+                      <i class="fas fa-info-circle"></i> <!-- Information icon as a link -->
+                  </a>
+              </div>
               </td>
           </tr>
         {% endfor %}
