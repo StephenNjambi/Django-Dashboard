@@ -18,7 +18,7 @@
 
     <h1 id="product_table_h1">Add Product</h1>
  
-    <form id="products_form" method="post" action="{% url 'products:products' %}">
+    <form autocomplete="off" id="products_form" method="post" action="{% url 'products:products' %}">
       {% csrf_token %}
 
       <div class="imput_content">
@@ -70,15 +70,44 @@
               <td>
                 <div class="btns_container">
                   <button id="actionEdit_btn" class="edit_button" >Edit</button>
-                  <!-- <button  class="actionRemove_btn" data-product-id="{{ product.id }}">Remove</button> -->
                   <button class="actionRemove_btn" data-delete-url="{% url 'products:delete_product' product.id %}" data-product-id="{{ productId }}">Delete</button>
-
                 </div>
               </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
+  </div>
+
+  <div class="editForm_hidden">
+    <div class="Editform_h1">Edit Product.</div>
+    <form autocomplete="off" id="hidden_form" method="POST">
+      <div id="rowSpace" class="row row-space">
+        <div id="rowSpaceCol" class="col-2">
+          <div class="input-group">
+          <label id="editLables" class="label">Product Type</label>
+          <input id="editInput" class="input--style-4" type="text" name="first_name">
+          </div>
+        </div>
+        <div id="rowSpaceCol" class="col-2">
+          <div class="input-group">
+          <label id="editLables" class="label">Product Type</label>
+          <input id="editInput" class="input--style-4" type="text" name="last_name">
+          </div>
+        </div>
+        <div id="rowSpaceCol" class="col-2">
+          <div class="input-group">
+          <label id="editLables" class="label">Product Price</label>
+          <input id="editInput" class="input--style-4" type="text" name="last_name">
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="buttondiv" style="display: flex; justify-content: center;">
+      <button id="actionEdit_btn2" class="edit_button2">Save</button>
+    </div>
+    
   </div>
 
   {% block javascripts %}
