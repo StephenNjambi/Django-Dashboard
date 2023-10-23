@@ -198,6 +198,7 @@ form#products_form {
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 7%;
+  box-shadow: 0 0 11px rgb(61 80 75);
 }
 
 form#products_form label {
@@ -372,6 +373,7 @@ form#edit_form{
   box-shadow: 0 0 11px rgb(61 80 75);
   width: 43%;
   height: 25rem;
+  display: none;
 }
 
 .container form .form-row{

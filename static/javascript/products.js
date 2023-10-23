@@ -3,8 +3,10 @@
 $(document).ready(function () {
     $('#product_table').DataTable();
 });
-
-
+// Function to initialize the DataTable
+// $(document).ready(function () {
+//     $('#product_table').DataTable();
+// });
 
 
 // Function to delete a row with confirmation
@@ -19,12 +21,9 @@ $(document).on('click', '.delete_link i', function () {
                 type: 'DELETE',
                 url: '/products/delete_product/' + productId + '/',
                 success: function () {
-                    // Remove the row from the table
                     row.remove();
 
-                    // Wait for the table to be redrawn before returning
                     table.draw().then(function () {
-                        // The table has been redrawn
                         console.log('The table has been redrawn');
                     });
                 },
@@ -38,61 +37,35 @@ $(document).on('click', '.delete_link i', function () {
 
 
 
-
-
-
-
-// Function to edit the product in the product table
-
-
-// $(document).on('click', '.edit_link', function(e) {
-//     e.preventDefault();
-//     console.log('Edit link clicked');
-
-//     // Get the product ID from the data attribute of the clicked row
-//     const productId = $(this).closest('tr').data('product-id');
-//     console.log('product ID:', productId)
-
-//     // Update the form action URL
-//     const form = $('#hidden_form');
-//     const actionUrl='/products/edit_product/' + productId + '/';
-//     form.attr('action', '/products/edit_product/' + productId + '/');
-//     console.log('Form Action URL:', actionUrl);
-//     // Optionally, you can populate the form fields with the product data here
-
-//     // Show the edit form
-//     $('.editForm_hidden').show();
-//     console.log('Edit form displayed')
-// });
-
+// Function to edit products.
 $(document).on('click', '.edit_link', function(e) {
     e.preventDefault();
-    console.log('Edit link clicked');
+    console.log('Edit link clicked.');
 
-    // Get the product ID from the data attribute of the clicked row
-    const productId = $(this).closest('tr').data('product-id');
+    const productId = $(this).data('product-id');
     console.log('Product ID:', productId);
 
-    // Update the form action URL
-    const form = $('#hidden_form');
-    const actionUrl = '/products/edit_product/' + productId + '/';
-    form.attr('action', actionUrl);
-    console.log('Form Action URL:', actionUrl);
+    const editForm = $('#edit_form');
+    editForm.attr('action', '/products/edit_product/' + productId + '/');
+    console.log('Form action updated:', editForm.attr('action'));
 
-    // Show the edit form
-    $('.editForm_hidden').show();
-    console.log('Edit form displayed');
+    // Scroll the form 
+    $('html, body').animate({
+        scrollTop: editForm.offset().top
+    }, 300); 
+
+    editForm.show();
+    console.log('Form shown.');
 });
 
 
+  
 
 
 
 
-// Function to initialize the DataTable
-$(document).ready(function () {
-    $('#product_table').DataTable();
-});
+
+
 
 
 
