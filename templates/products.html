@@ -70,19 +70,15 @@
               <td>{{ product.product_name }}</td>
               <td>{{ product.product_price }}</td>
               <td>
-                <!-- <div class="btns_container">
-                  <button id="actionEdit_btn" class="edit_button" >Edit</button>
-                  <button class="actionRemove_btn" data-delete-url="{% url 'products:delete_product' product.id %}" data-product-id="{{ productId }}">Delete</button>
-                </div> -->
                 <div class="btns_container">
-                  <a href="#" class="edit_link">
-                      <i class="fas fa-edit"></i> <!-- Edit icon as a link -->
+                  <a href="#" class="edit_link" title="Edit">
+                      <i class="fas fa-edit" ></i> 
                   </a>
-                  <a href="#" class="delete_link">
-                      <i class="fas fa-trash"></i> <!-- Delete icon as a link -->
+                  <a href="#" class="delete_link" title="delete">
+                      <i class="fas fa-trash"></i> 
                   </a>
-                  <a href="#" class="info_link">
-                      <i class="fas fa-info-circle"></i> <!-- Information icon as a link -->
+                  <a href="#" class="info_link" title="info">
+                      <i class="fas fa-info-circle"></i> 
                   </a>
               </div>
               </td>
@@ -92,9 +88,10 @@
     </table>
   </div>
 
-  <div class="editForm_hidden">
+  <!-- <div class="editForm_hidden">
     <div class="Editform_h1">Edit Product.</div>
     <form autocomplete="off" id="hidden_form" method="POST">
+      {% csrf_token %}
       <div id="rowSpace" class="row row-space">
         <div id="rowSpaceCol" class="col-2">
           <div class="input-group">
@@ -121,8 +118,50 @@
       <button id="actionEdit_btn2" class="edit_button2">Save</button>
     </div>
     
-  </div>
+  </div> -->
 
+
+    <form id="edit_form" action="POST">
+      <div class="text">Edit Product</div>
+      <div class="inputs_container">
+
+     
+      <div class="form-row">
+        <div class="input-data">
+          <input type="text" required>
+          <div class="underline"></div>
+          <label for="">Product Name</label>
+        </div>
+        <div class="input-data">
+          <input type="text" required>
+          <div class="underline"></div>
+          <label for="">Product Type</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-data">
+          <input type="text" required>
+          <div class="underline"></div>
+          <label for="">Price</label>
+        </div>
+        
+      </div>
+      <div class="form-row">
+      <div class="input-data textarea">
+        <textarea rows="8" cols="80" required></textarea>
+        <br />
+        <div class="underline"></div>
+        <label for="">Write your message</label>
+        <br />
+      </div>
+        <div class="form-row submit-btn">
+          <div class="input-data">
+            <div class="inner"></div>
+            <input type="submit" value="submit">
+          </div>
+        </div>
+    </form>
+  
   {% block javascripts %}
     <script src="{% static 'javascript/products.js' %}"></script>
   {% endblock %}

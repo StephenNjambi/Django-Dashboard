@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Product
 from .forms import ProductForm
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, get_object_or_404,redirect
 
 
 # Form to add products to the table 
@@ -27,4 +28,15 @@ def delete_product(request, product_id):
         response_data = {'message': 'Not found'}
     return JsonResponse(response_data)
 
+# View for editing the product.
+def edit_product(request, product_id):
+    product = get_object_or_404(product, pk=product_id)
 
+    if request.method == "POST":
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('products:products')
+        else:
+            form = ProductForm(instance=product)
+            return render(request, 'edit_product.html', {'form': form, 'product': product})
