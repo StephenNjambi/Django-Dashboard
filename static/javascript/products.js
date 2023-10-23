@@ -58,6 +58,13 @@ $(document).on('click', '.edit_link', function(e) {
     console.log('Form shown.');
 });
 
+// hiding the form when close (x) icon is clicked
+$(document).on('click', '.close_link', function(e) {
+    e.preventDefault();
+    $('#edit_form').hide();
+});
+
+
 
   
 

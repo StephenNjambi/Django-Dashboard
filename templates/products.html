@@ -71,10 +71,7 @@
               <td>{{ product.product_price }}</td>
               <td>
                 <div class="btns_container">
-                  <!-- <a href="#" class="edit_link" title="Edit">
-                      <i class="fas fa-edit" ></i> 
-                  </a> -->
-                  
+
                   <a href="#" class="edit_link" data-product-id="{{ product.id }}" title="Edit">
                     <i class="fas fa-edit"></i> 
                   </a>
@@ -97,6 +94,11 @@
 
   <form id="edit_form" action="/products/edit_product/" method="post">
     {% csrf_token %}
+    <a href="#product_table" class="close_link" title="close">
+      <i class="fas fa-times"></i>
+    </a>
+    
+
     <div class="text">Edit Product</div>
     <div class="inputs_container">
       <div class="form-row">
@@ -136,46 +138,7 @@
     </div>
   </form>
   
-<!-- 
-    <form id="edit_form" action="POST">
-      {% csrf_token %}
-      <div class="text">Edit Product</div>
-      <div class="inputs_container">
-      <div class="form-row">
-        <div class="input-data">
-          <input type="text" required>
-          <div class="underline"></div>
-          <label for="">Product Name</label>
-        </div>
-        <div class="input-data">
-          <input type="text" required>
-          <div class="underline"></div>
-          <label for="">Product Type</label>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-data">
-          <input type="text" required>
-          <div class="underline"></div>
-          <label for="">Price</label>
-        </div>
-        
-      </div>
-      <div class="form-row">
-      <div class="input-data textarea">
-        <textarea rows="8" cols="80" required></textarea>
-        <br />
-        <div class="underline"></div>
-        <label for="">Write your message</label>
-        <br />
-      </div>
-        <div class="form-row submit-btn">
-          <div class="input-data">
-            <div class="inner"></div>
-            <input type="submit" value="submit">
-          </div>
-        </div>
-    </form> -->
+
   
   {% block javascripts %}
     <script src="{% static 'javascript/products.js' %}"></script>
